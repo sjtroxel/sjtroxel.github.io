@@ -74,11 +74,11 @@
 </div>
 
 <p class="summary">
-AI Software Engineer building production multi-agent and RAG systems in Python and TypeScript, all
-deployed and live on Railway and Vercel. Systems ground their outputs in retrieved evidence with
-citations, score confidence from observable signals, hand off to a human when they should, and are
-gated by evaluation suites in CI. Works spec-first with AI-assisted development (Claude Code and other
-agentic coding tools), pairing velocity with strict typing and 1,800+ automated tests.
+AI Software Engineer building production multi-agent and RAG systems in Python and TypeScript, deployed
+on AWS, Railway, and Vercel. Systems ground their outputs in retrieved evidence with citations, refuse or
+hand off to a human when evidence is thin, and are gated by evals. Works spec-first with AI-assisted
+development (Claude Code), pairing velocity with strict typing, infrastructure as code, and 4,000+
+automated tests.
 </p>
 
 <h2>Projects</h2>
@@ -88,8 +88,18 @@ agentic coding tools), pairing velocity with strict typing and 1,800+ automated 
   <ul>
     <li>Multi-agent memo pipeline shipped as the production default only after a paid LLM-as-judge evaluation showed it beat the single-pass baseline (groundedness 97.9% vs 95.9%, citations 100% vs 97.7%).</li>
     <li>A deterministic scope gate decides which laws apply, so the compliance verdict cannot be hallucinated; the model writes only cited explanation prose. Grounded RAG over 12 AI-regulation laws across 7 jurisdictions, each in its own operative legal test; adding a law is a data change, not code.</li>
-    <li>Same engine exposed as an MCP server (five read-only tools); a monitoring agent opens pull requests as the human gate. 357 tests, CI.</li>
-    <li>Python, FastAPI, Streamlit, Chroma, fastembed (BGE-small), Claude Haiku + Sonnet + Opus, GitHub Actions CI, Railway + Vercel</li>
+    <li>Same engine exposed as an MCP server; a monitoring agent opens pull requests as the human gate.</li>
+    <li>Python, FastAPI, Streamlit, Chroma, fastembed, Claude Haiku + Sonnet + Opus, GitHub Actions CI, Railway</li>
+  </ul>
+</div>
+
+<div class="proj">
+  <div class="proj-head"><b>Musical Mycelium</b> — cited music-history research agent on AWS — <a class="url" href="https://musical-mycelium.vercel.app">musical-mycelium.vercel.app</a></div>
+  <ul>
+    <li>Agent walks a 9,000-edge music-lineage graph built from Wikidata and DBpedia. The model proposes claims, a deterministic Python gate checks each against the versioned corpus, and prose is written only from approved claims, so every connection cites its source or is refused.</li>
+    <li>Release-gated evaluation: 63 live cases, six blocking gates (grounding, citations, prompt injection, refusal accuracy), bounds from a measured noise floor, a sealed held-out set, and a public report showing failures.</li>
+    <li>Serverless, all in Terraform: a hand-built Bedrock Converse tool loop on a Lambda container streaming SSE, S3 + CloudFront, keyless OIDC deploys from GitHub Actions.</li>
+    <li>Python, Bedrock (Claude Haiku 4.5, Nova Pro), AWS Lambda, S3, CloudFront, Terraform, React</li>
   </ul>
 </div>
 
@@ -106,22 +116,14 @@ agentic coding tools), pairing velocity with strict typing and 1,800+ automated 
   <div class="proj-head"><b>Wildlife Sentinel</b> — 24/7 autonomous wildlife crisis intelligence — <a class="url" href="https://wildlife-sentinel.vercel.app">wildlife-sentinel.vercel.app</a></div>
   <ul>
     <li>12 scout agents poll nine government data sources 24/7; a five-agent swarm on a Redis Streams pipeline correlates events against 750 IUCN species ranges in PostGIS and posts Discord alerts.</li>
-    <li>Self-improving Refiner/Evaluator loop scored real flood and coral-bleaching predictions against observed outcomes and rewrote its own agent prompts in production. 470 unit tests + 43 E2E.</li>
+    <li>Self-improving Refiner/Evaluator loop scored real flood and coral-bleaching predictions against observed outcomes and rewrote its own agent prompts in production.</li>
     <li>TypeScript, Node.js, Express 5, Redis Streams, PostGIS + pgvector, Gemini, Claude, Next.js 15, Railway</li>
   </ul>
 </div>
 
-<div class="proj">
-  <div class="proj-head"><b>Asteroid Bonanza</b> — multi-agent asteroid intelligence platform — <a class="url" href="https://asteroid-bonanza.vercel.app">asteroid-bonanza.vercel.app</a></div>
-  <ul>
-    <li>Four-agent swarm plus orchestrator analyzes 35,000+ near-Earth objects; each agent calls live NASA APIs via Anthropic tool use, with dual RAG indices and per-event SSE streaming of every tool call.</li>
-    <li>Confidence computed from observable fields, never self-reported; human-handoff threshold calibrated empirically. 209 server tests (97% coverage) + 226 E2E.</li>
-    <li>TypeScript, Angular 21, Express 5, Supabase + pgvector, Claude Sonnet, Voyage AI, Three.js</li>
-  </ul>
-</div>
-
 <p class="also">
-Also live: <a href="https://poster-pilot.vercel.app">Poster Pilot</a> (multimodal RAG over 5,000+ historical posters, CLIP + Reciprocal Rank Fusion),
+Also live: <a href="https://asteroid-bonanza.vercel.app">Asteroid Bonanza</a> (four-agent swarm over 35,000+ near-Earth objects with live NASA tool calls),
+<a href="https://poster-pilot.vercel.app">Poster Pilot</a> (multimodal RAG over 5,000+ historical posters, CLIP + Reciprocal Rank Fusion),
 SoilProve (fertilizer-prescription tool, multi-provider LLM failover, built solo in 5 days), and
 <a href="https://chrono-quizzr.vercel.app">ChronoQuizzr</a> (geography trivia, adversarial two-agent clue-verification pipeline).
 </p>
@@ -130,9 +132,9 @@ SoilProve (fertilizer-prescription tool, multi-provider LLM failover, built solo
 
 <div class="job">
   <div class="job-head"><b>AI Software Engineer</b> &middot; Self-directed &middot; Remote &middot; January 2026 – present</div>
-  Designed, built, and operate the production AI systems above: agent orchestration, grounded RAG and
-  vector search, evaluation pipelines (golden datasets, LLM-as-judge), streaming APIs, an MCP server, and
-  cost-aware multi-model routing, in Python and TypeScript.
+  Designed, built, and operate the production AI systems above: agent orchestration, grounded RAG,
+  evaluation pipelines, streaming APIs, an MCP server,
+  cost-aware multi-model routing, and serverless AWS in Terraform.
 </div>
 
 <div class="job">
@@ -151,10 +153,10 @@ SoilProve (fertilizer-prescription tool, multi-provider LLM failover, built solo
 
 <h2>Skills</h2>
 <div class="skills">
-  <p><b>AI / LLM:</b> Retrieval-Augmented Generation (RAG), multi-agent orchestration, LLM-as-judge evaluation, golden datasets, Model Context Protocol (MCP), LLM APIs (Anthropic, OpenAI, Google), LangGraph, vector databases (Chroma, Pinecone, pgvector), prompt engineering, spend-safety</p>
-  <p><b>Languages &amp; backend:</b> Python (FastAPI, Streamlit), TypeScript (strict mode), Node.js, Express 5, Ruby on Rails, PostgreSQL, PostGIS, Redis Streams, SSE streaming</p>
-  <p><b>Frontend:</b> React, Angular, Next.js, Tailwind CSS</p>
-  <p><b>Testing &amp; delivery:</b> pytest, Vitest, Playwright, GitHub Actions CI, Docker, Railway, Vercel</p>
+  <p><b>AI / LLM:</b> Retrieval-Augmented Generation (RAG), multi-agent orchestration, LLM-as-judge evaluation, golden datasets, Model Context Protocol (MCP), LLM APIs (Anthropic, OpenAI, Google, Amazon Bedrock), LangGraph, vector databases (Chroma, Pinecone, pgvector), prompt engineering, spend-safety</p>
+  <p><b>Languages &amp; backend:</b> Python (FastAPI, Streamlit), TypeScript (strict), Node.js, Express 5, Ruby on Rails, PostgreSQL, PostGIS, Redis Streams, SSE streaming</p>
+  <p><b>Frontend &amp; testing:</b> React, Angular, Next.js, Tailwind CSS; pytest, Vitest, Playwright</p>
+  <p><b>Cloud:</b> AWS (Bedrock, Lambda, S3, CloudFront), Terraform, Docker, GitHub Actions + OIDC, Railway, Vercel</p>
 </div>
 
 </body>
