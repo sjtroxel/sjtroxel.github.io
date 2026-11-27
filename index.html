@@ -3,161 +3,55 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Steffan Troxel — Resume</title>
-<style>
-  @page { size: Letter; margin: 0.35in 0.55in; }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  /* Ligatures OFF: Chromium renders "fi"/"ff" as single glyphs (U+FB01/U+FB00), which some ATS
-     parsers extract literally — "Codefi" became "Codeﬁ" in the parsed text. Keeps keywords searchable. */
-  body { font-family: "DejaVu Sans", Arial, Helvetica, sans-serif; font-size: 9.5pt; line-height: 1.15; color: #111;
-         font-variant-ligatures: none; }
-  .header { text-align: center; }
-  h1 { font-size: 18pt; font-weight: 700; letter-spacing: 0.5px; }
-  .role { font-size: 10.5pt; font-weight: 600; }
-  .contact { font-size: 9pt; margin-top: 1px; color: #222; }
-  .summary { margin-top: 4px; }
-  h2 { font-size: 10pt; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #444;
-       margin: 6px 0 2px; padding-bottom: 1px; }
-  .proj { margin-bottom: 2px; }
-  .proj-head { font-size: 9.7pt; }
-  .proj-head .url { font-weight: 400; color: #222; }
-  ul { margin: 0 0 0 15px; }
-  li { margin-bottom: 0; }
-  .also { margin-top: 3px; }
-  .job { margin-bottom: 4px; }
-  .job-head { font-size: 9.7pt; }
-  .edu li { margin-bottom: 0; }
-  .skills p { margin-bottom: 1px; }
-  /* Links must not alter the PDF: inherit colour, no underline. */
-  a { color: inherit; text-decoration: none; }
-  /* Never break a URL across lines, in either medium. */
-  .contact a, .proj-head .url, .also a { white-space: nowrap; }
-
-  /* SCREEN ONLY. Print/PDF output is unchanged -- everything above still governs the PDF.
-     The pt sizes above are tuned to fit one Letter page; on a monitor they read as tiny
-     text spanning the full window, so screen gets its own scale and a page-like column. */
-  @media screen {
-    html { background: #eceff1; }
-    body { background: #fff; color: #16181a;
-           max-width: 830px; margin: 32px auto; padding: 48px 56px;
-           font-size: 15px; line-height: 1.55;
-           border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,.13), 0 6px 24px rgba(0,0,0,.07); }
-    h1 { font-size: 31px; letter-spacing: 0; }
-    .role { font-size: 17px; color: #3a4046; }
-    .contact { font-size: 14px; margin-top: 6px; color: #4a5158; line-height: 1.7; }
-    .summary { margin-top: 18px; }
-    h2 { font-size: 13px; letter-spacing: 1.4px; color: #2a2f34;
-         border-bottom: 1px solid #d3d8dd; margin: 30px 0 12px; padding-bottom: 5px; }
-    .proj, .job { margin-bottom: 18px; }
-    .proj-head, .job-head { font-size: 15.5px; margin-bottom: 5px; }
-    a { color: #1a5fb4; }
-    a:hover { text-decoration: underline; }
-    .proj-head .url { color: #1a5fb4; }
-    ul { margin-left: 20px; }
-    li { margin-bottom: 5px; }
-    .also { margin-top: 12px; }
-    .edu li, .skills p { margin-bottom: 5px; }
-  }
-
-  @media screen and (max-width: 700px) {
-    body { margin: 0; padding: 26px 20px; border-radius: 0; box-shadow: none; max-width: none; }
-    h1 { font-size: 25px; }
-  }
+<title>Steffan Troxel, Resume</title>
+<style>@page { size: Letter; margin: 0.3in 0.5in; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: "DejaVu Sans", Arial, Helvetica, sans-serif; font-size: 9.2pt; line-height: 1.13; color:#111; font-variant-ligatures: none; }
+a { color: inherit; text-decoration: none; }
+.header { text-align:center; } h1 { font-size: 18pt; letter-spacing: .5px; } .role { font-size: 10.5pt; font-weight:600; }
+.contact { font-size: 9pt; margin-top:1px; color:#222; } .contact a { white-space: nowrap; }
+.summary { margin-top: 5px; }
+h2 { font-size: 9.8pt; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #444; margin: 6px 0 3px; padding-bottom: 1px; }
+ul { margin: 0 0 0 14px; } .stack { color:#333; }
+.also { margin-top: 3px; } .job { margin-bottom: 3px; } .skills p { margin-bottom: 1px; }
+.proj { margin-bottom: 3px; } .ph { font-size: 9.6pt; } .ph { display:flex; justify-content:space-between; } .ph .url { font-weight:400; color:#222; white-space:nowrap; }
+.what { font-style: italic; color:#222; }
+/* SCREEN ONLY (the github.io page). Print/PDF output is governed by everything above. */
+@media screen {
+  html { background: #eceff1; }
+  body { background: #fff; color: #16181a; max-width: 830px; margin: 32px auto; padding: 48px 56px;
+         font-size: 15px; line-height: 1.55; border-radius: 3px;
+         box-shadow: 0 1px 3px rgba(0,0,0,.13), 0 6px 24px rgba(0,0,0,.07); }
+  h1 { font-size: 31px; letter-spacing: 0; }
+  .role { font-size: 17px; color: #3a4046; }
+  .contact { font-size: 14px; margin-top: 6px; color: #4a5158; line-height: 1.7; }
+  .summary { margin-top: 18px; }
+  h2 { font-size: 13px; letter-spacing: 1.4px; color: #2a2f34; border-bottom: 1px solid #d3d8dd; margin: 30px 0 12px; padding-bottom: 5px; }
+  .proj, .job { margin-bottom: 18px; }
+  .ph { font-size: 15.5px; margin-bottom: 2px; flex-wrap: wrap; gap: 0 12px; }
+  .what { margin-bottom: 5px; }
+  a { color: #1a5fb4; } a:hover { text-decoration: underline; } .ph .url { color: #1a5fb4; }
+  ul { margin-left: 20px; } li { margin-bottom: 5px; }
+  .also { margin-top: 12px; } .skills p { margin-bottom: 5px; }
+}
+@media screen and (max-width: 700px) {
+  body { margin: 0; padding: 26px 20px; border-radius: 0; box-shadow: none; max-width: none; }
+  h1 { font-size: 25px; }
+}
 </style>
 </head>
 <body>
-
-<div class="header">
-  <h1>Steffan Troxel</h1>
-  <div class="role">AI Software Engineer</div>
-  <div class="contact">Cape Girardeau, MO (remote) &middot; <a href="mailto:sjtroxel@protonmail.com">sjtroxel@protonmail.com</a> &middot; <a href="https://github.com/sjtroxel">github.com/sjtroxel</a> &middot; <a href="https://www.linkedin.com/in/sjtroxel">linkedin.com/in/sjtroxel</a></div>
-</div>
-
-<p class="summary">
-AI Software Engineer building production multi-agent and RAG systems in Python and TypeScript, deployed
-on AWS, Railway, and Vercel. Systems ground their outputs in retrieved evidence with citations, refuse or
-hand off to a human when evidence is thin, and are gated by evals. Works spec-first with AI-assisted
-development (Claude Code), pairing velocity with strict typing, infrastructure as code, and 4,000+
-automated tests.
-</p>
-
+<div class="header"><h1>Steffan Troxel</h1><div class="role">AI Software Engineer</div>
+<div class="contact">Cape Girardeau, MO (remote) &middot; <a href="mailto:sjtroxel@protonmail.com">sjtroxel@protonmail.com</a> &middot; <a href="https://github.com/sjtroxel">github.com/sjtroxel</a> &middot; <a href="https://www.linkedin.com/in/sjtroxel">linkedin.com/in/sjtroxel</a></div></div>
+<p class="summary">Self-taught AI software engineer. I build and run LLM systems on my own in Python and TypeScript, from the retrieval and agent code through the evals to the AWS infrastructure in Terraform. The five projects below are live, built solo with AI-assisted development (mostly Claude Code), with 8,000+ automated tests between them.</p>
 <h2>Projects</h2>
-
-<div class="proj">
-  <div class="proj-head"><b>Patchwork Assurance</b> — grounded US AI-regulation compliance tool — <a class="url" href="https://patchworkassurance.com">patchworkassurance.com</a></div>
-  <ul>
-    <li>Multi-agent memo pipeline shipped as the production default only after a paid LLM-as-judge evaluation showed it beat the single-pass baseline (groundedness 97.9% vs 95.9%, citations 100% vs 97.7%).</li>
-    <li>A deterministic scope gate decides which laws apply, so the compliance verdict cannot be hallucinated; the model writes only cited explanation prose. Grounded RAG over 12 AI-regulation laws across 7 jurisdictions, each in its own operative legal test; adding a law is a data change, not code.</li>
-    <li>Same engine exposed as an MCP server; a monitoring agent opens pull requests as the human gate.</li>
-    <li>Python, FastAPI, Streamlit, Chroma, fastembed, Claude Haiku + Sonnet + Opus, GitHub Actions CI, Railway</li>
-  </ul>
-</div>
-
-<div class="proj">
-  <div class="proj-head"><b>Musical Mycelium</b> — cited music-history research agent on AWS — <a class="url" href="https://musical-mycelium.vercel.app">musical-mycelium.vercel.app</a></div>
-  <ul>
-    <li>Agent walks a 9,000-edge music-lineage graph built from Wikidata and DBpedia. The model proposes claims, a deterministic Python gate checks each against the versioned corpus, and prose is written only from approved claims, so every connection cites its source or is refused.</li>
-    <li>Release-gated evaluation: 63 live cases, six blocking gates (grounding, citations, prompt injection, refusal accuracy), bounds from a measured noise floor, a sealed held-out set, and a public report showing failures.</li>
-    <li>Serverless, all in Terraform: a hand-built Bedrock Converse tool loop on a Lambda container streaming SSE, S3 + CloudFront, keyless OIDC deploys from GitHub Actions.</li>
-    <li>Python, Bedrock (Claude Haiku 4.5, Nova Pro), AWS Lambda, S3, CloudFront, Terraform, React</li>
-  </ul>
-</div>
-
-<div class="proj">
-  <div class="proj-head"><b>Heritage Odyssey</b> — family-history RAG platform with voice narration — <a class="url" href="https://heritage-odyssey.vercel.app">heritage-odyssey.vercel.app</a></div>
-  <ul>
-    <li>Multi-tenant RAG: each user's GEDCOM tree embeds into a private Pinecone namespace, retrieved with a public emigration corpus; a three-node LangGraph pipeline hands off to the user when retrieval confidence is low rather than inventing ancestry.</li>
-    <li>Python FastAPI evaluation microservice scores every narrative on six metrics (Ragas, LLM-as-judge), regression-tested in CI with promptfoo and traced in LangSmith.</li>
-    <li>TypeScript, LangGraph, Pinecone, OpenAI GPT-4o + Whisper, ElevenLabs, Python FastAPI, React 19</li>
-  </ul>
-</div>
-
-<div class="proj">
-  <div class="proj-head"><b>Wildlife Sentinel</b> — 24/7 autonomous wildlife crisis intelligence — <a class="url" href="https://wildlife-sentinel.vercel.app">wildlife-sentinel.vercel.app</a></div>
-  <ul>
-    <li>12 scout agents poll nine government data sources 24/7; a five-agent swarm on a Redis Streams pipeline correlates events against 750 IUCN species ranges in PostGIS and posts Discord alerts.</li>
-    <li>Self-improving Refiner/Evaluator loop scored real flood and coral-bleaching predictions against observed outcomes and rewrote its own agent prompts in production.</li>
-    <li>TypeScript, Node.js, Express 5, Redis Streams, PostGIS + pgvector, Gemini, Claude, Next.js 15, Railway</li>
-  </ul>
-</div>
-
-<p class="also">
-Also live: <a href="https://asteroid-bonanza.vercel.app">Asteroid Bonanza</a> (four-agent swarm over 35,000+ near-Earth objects with live NASA tool calls),
-<a href="https://poster-pilot.vercel.app">Poster Pilot</a> (multimodal RAG over 5,000+ historical posters, CLIP + Reciprocal Rank Fusion),
-SoilProve (fertilizer-prescription tool, multi-provider LLM failover, built solo in 5 days), and
-<a href="https://chrono-quizzr.vercel.app">ChronoQuizzr</a> (geography trivia, adversarial two-agent clue-verification pipeline).
-</p>
-
+<div class="proj"><div class="ph"><b>Patchwork Assurance</b> <a class="url" href="https://patchworkassurance.com">patchworkassurance.com</a></div><div class="what">Reads US state AI-regulation law for a described business and writes a cited memo.</div><ul><li>A deterministic scope gate in Python decides which of 12 laws across 7 jurisdictions apply, and the model only writes the cited explanation; adding a law is a data change, not new code.</li><li>The multi-agent memo pipeline became the default after a paid LLM-as-judge run scored it above the single-pass baseline (groundedness 97.9% vs 95.9%, citations 100% vs 97.7%). The same engine also runs as an MCP server.</li><li class="stack">Python, FastAPI, Streamlit, Chroma, Claude Haiku + Sonnet + Opus, MCP, GitHub Actions, Railway</li></ul></div><div class="proj"><div class="ph"><b>Horizon Compact</b> <a class="url" href="https://horizon-compact.vercel.app">horizon-compact.vercel.app</a></div><div class="what">A pre-registered experiment on whether the goal an AI model is given changes its business decisions.</div><ul><li>In one decision, AI tools could do the work of 125 office staff and the model chose between severance and retraining for plant jobs. Told to serve shareholders over twenty years, Claude Haiku 5.5 kept about 74% of them; told to serve all stakeholders over the same span, about 93%.</li><li>2,100+ runs on Haiku and gpt-oss-120b under a protocol tagged before any official run; the harness refuses a mismatched sweep, each run is a write-once S3 object, and CI re-derives every result byte for byte.</li><li class="stack">Python, ECS on Fargate, ECR, S3, CloudFront, Terraform, OIDC, React + TypeScript, Anthropic API, OpenRouter</li></ul></div><div class="proj"><div class="ph"><b>Musical Mycelium</b> <a class="url" href="https://musical-mycelium.vercel.app">musical-mycelium.vercel.app</a></div><div class="what">Answers music-history questions by walking a cited lineage graph.</div><ul><li>The model proposes claims, plain Python checks each one against a 9,000-edge graph built from Wikidata and DBpedia, and the answer is written from the claims that pass. A connection it cannot source is refused.</li><li>Releases wait on 63 live eval cases and six blocking checks set from a measured noise floor, and the public report shows the failed runs too. The Bedrock tool loop is hand-built and streams SSE from Lambda.</li><li class="stack">Python, Amazon Bedrock (Claude Haiku 4.5, Nova Pro), AWS Lambda, S3, CloudFront, Terraform, React</li></ul></div><div class="proj"><div class="ph"><b>Heritage Odyssey</b> <a class="url" href="https://heritage-odyssey.vercel.app">heritage-odyssey.vercel.app</a></div><div class="what">Turns a family tree into a narrated oral history.</div><ul><li>Each user's GEDCOM file gets its own Pinecone namespace, searched alongside a public emigration corpus; when retrieval is thin, the three-node LangGraph pipeline asks the user rather than invent ancestors.</li><li>A separate Python FastAPI service scores every narrative on six metrics (Ragas, LLM-as-judge), and promptfoo catches regressions in CI.</li><li class="stack">TypeScript, LangGraph, Pinecone, OpenAI GPT-4o + Whisper, ElevenLabs, Python FastAPI, React 19</li></ul></div><div class="proj"><div class="ph"><b>Wildlife Sentinel</b> <a class="url" href="https://wildlife-sentinel.vercel.app">wildlife-sentinel.vercel.app</a></div><div class="what">Watches government data feeds around the clock for threats to endangered species.</div><ul><li>Twelve scout agents poll nine government sources, and a five-agent swarm on Redis Streams checks each event against 750 IUCN species ranges in PostGIS before posting a Discord alert.</li><li>A Refiner/Evaluator loop compared its flood and coral-bleaching predictions with what actually happened and rewrote its own agent prompts in production.</li><li class="stack">TypeScript, Node.js, Express 5, Redis Streams, PostGIS + pgvector, Gemini, Claude, Next.js 15, Railway</li></ul></div>
+<p class="also">Also live: <a href="https://asteroid-bonanza.vercel.app">Asteroid Bonanza</a> (four agents over 35,000+ near-Earth objects, live NASA tool calls), <a href="https://poster-pilot.vercel.app">Poster Pilot</a> (multimodal RAG over 5,000+ posters, CLIP + Reciprocal Rank Fusion), SoilProve (fertilizer tool with LLM failover, built in 5 days) and <a href="https://chrono-quizzr.vercel.app">ChronoQuizzr</a> (geography trivia with an adversarial clue checker).</p>
 <h2>Experience</h2>
-
-<div class="job">
-  <div class="job-head"><b>AI Software Engineer</b> &middot; Self-directed &middot; Remote &middot; January 2026 – present</div>
-  Designed, built, and operate the production AI systems above: agent orchestration, grounded RAG,
-  evaluation pipelines, streaming APIs, an MCP server,
-  cost-aware multi-model routing, and serverless AWS in Terraform.
-</div>
-
-<div class="job">
-  <div class="job-head"><b>Student Software Engineer (Apprenticeship)</b> &middot; Codefi &middot; Remote &middot; January 2025 – present</div>
-  Year-long full-stack bootcamp (JavaScript, TypeScript, Angular, React, Ruby on Rails), followed
-  by Codefi's AI Skills track: Prompt-to-Product and the production AI engineering Masterclass.
-</div>
-
+<div class="job"><b>AI Software Engineer</b> &middot; Self-directed &middot; Remote &middot; January 2026 – present<br>Built and run the systems above, from agent orchestration and RAG to evaluation pipelines, an MCP server and AWS in Terraform.</div><div class="job"><b>Student Software Engineer (Apprenticeship)</b> &middot; Codefi &middot; Remote &middot; January 2025 – present<br>Year-long full-stack bootcamp (JavaScript, TypeScript, Angular, React, Ruby on Rails), then Codefi's AI Skills track: Prompt-to-Product and the AI engineering Masterclass.</div>
 <h2>Education</h2>
-<ul class="edu">
-  <li>Codefi — AI Engineering &amp; Skills Training: Prompt-to-Product &amp; AI Masterclass (2026)</li>
-  <li>Codefi CodeLabs — Full-Stack Web Development Bootcamp (2025)</li>
-  <li>SMU Dedman School of Law — J.D.</li>
-  <li>Indiana University Bloomington — B.A.</li>
-</ul>
-
+<ul><li>Codefi: AI Engineering &amp; Skills Training, Prompt-to-Product &amp; AI Masterclass (2026); CodeLabs Full-Stack Web Development Bootcamp (2025)</li><li>SMU Dedman School of Law, J.D. &middot; Indiana University Bloomington, B.A.</li></ul>
 <h2>Skills</h2>
-<div class="skills">
-  <p><b>AI / LLM:</b> Retrieval-Augmented Generation (RAG), multi-agent orchestration, LLM-as-judge evaluation, golden datasets, Model Context Protocol (MCP), LLM APIs (Anthropic, OpenAI, Google, Amazon Bedrock), LangGraph, vector databases (Chroma, Pinecone, pgvector), prompt engineering, spend-safety</p>
-  <p><b>Languages &amp; backend:</b> Python (FastAPI, Streamlit), TypeScript (strict), Node.js, Express 5, Ruby on Rails, PostgreSQL, PostGIS, Redis Streams, SSE streaming</p>
-  <p><b>Frontend &amp; testing:</b> React, Angular, Next.js, Tailwind CSS; pytest, Vitest, Playwright</p>
-  <p><b>Cloud:</b> AWS (Bedrock, Lambda, S3, CloudFront), Terraform, Docker, GitHub Actions + OIDC, Railway, Vercel</p>
-</div>
-
+<div class="skills"><p><b>AI / LLM:</b> RAG, multi-agent orchestration, LLM-as-judge evaluation, pre-registered experiments, MCP, LangGraph, Anthropic, OpenAI, Google and Bedrock APIs, OpenRouter, Chroma, Pinecone, pgvector</p><p><b>Languages &amp; backend:</b> Python (FastAPI, Streamlit), TypeScript (strict), Node.js, Express 5, Ruby on Rails, PostgreSQL, PostGIS, Redis Streams, SSE streaming</p><p><b>Frontend &amp; testing:</b> React, Angular, Next.js, Vite, Tailwind CSS; pytest, Vitest, Playwright</p><p><b>Cloud:</b> AWS (Bedrock, Lambda, ECS Fargate, ECR, S3, CloudFront, IAM, VPC), Terraform, Docker, GitHub Actions OIDC, Railway</p></div>
 </body>
 </html>
